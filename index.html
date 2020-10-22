@@ -166,7 +166,18 @@
             In diesem Beispiel werden zwei LED's abwechselnd jede Sekunde an und aus gemacht.<br>
             Dazu wurde das Beispiel von davor leicht abgeändert.<br>
             Hier wird einfach ein weiterer pin (<span class="codeSymbol">6</span>) zu einem <span class="codeKeyword">OUTPUT</span> gemacht.<br>
-            Jetzt können wir die beiden LED's abwechselnd mit <span class="codeKeyword">digitalWrite</span> an und ausmachen.
+            Jetzt können wir die beiden LED's abwechselnd mit <span class="codeKeyword">digitalWrite</span> an und ausmachen.<br>
+
+            <br>
+
+            Baue die Schaltung nach und ändere den Code ab, so dass diese Lichtfolge entsteht:
+
+            <br>
+
+            <div id="two_LED_animation">
+                <span id="two_LED_animation_LED1">&emsp;</span>
+                <span id="two_LED_animation_LED2">&emsp;</span>
+            </div>
         </div>
     </div>
 
@@ -181,6 +192,7 @@
                     <td></td>
                     <td>
                         <img src="pictures/knopf_eingabe.png" />
+                        <i>(Widerstand: 10 kΩ)</i>
                     </td>
                     <td>
                         <div class="code">
@@ -192,7 +204,7 @@
                             <span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span><br>
                                 &emsp;&emsp;<span class="codeKeyword">if</span><span class="codeSymbol">(</span><span class="codeKeyword">digitalRead</span><span class="codeSymbol">(8) == </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">){</span><br>
                                 &emsp;&emsp;&emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">HIGH</span>);</span><br>
-                                &emsp;&emsp;&emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span><br>
+                                &emsp;&emsp;&emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(3000);</span><br>
                                 &emsp;&emsp;&emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">LOW</span><span class="codeSymbol"></span>);</span><br>
                                 &emsp;&emsp;<span class="codeSymbol">}</span><br>
                             <span class="codeSymbol">}</span>
@@ -207,12 +219,21 @@
         <br>
         
         <div class="description">
-            In diesem Beispiel leuchtet eine LED eine Sekunde lang, wenn man den Knopf drückt.<br>
+            In diesem Beispiel leuchtet eine LED drei Sekunden lang, wenn man den Knopf drückt.<br>
             Dazu wird in <span class="codeKeyword">setup</span> dem Arduino gesagt, dass pin <span class="codeSymbol">8</span> ein <span class="codeKeyword">INPUT</span> ist<br>
-            Jetzt können wir prüfen mit <span class="codeKeyword">digitalRead</span> auslesen, was für eine Stromspannung an diesem pin ist.<br>
+            Jetzt können wir mit <span class="codeKeyword">digitalRead</span> herausfinden, ob eine Stromspannung an diesem pin ist.<br>
             Mit <span class="codeKeyword">if</span> können wir prüfen ob etwas bestimmtes zutrifft und jenachdem bestimmten Code ausführen.<br>
             In diesem Beispiel wir die Stromspannung an dem pin ausgelesen und mit <span class="codeSymbol">==</span> geprüft ob diese gleich <span class="codeKeyword">HIGH</span> ist.<br>
-            Falls ja wird die LED an pin <span class="codeSymbol">7</span> für eine Sekunde an und dann wieder aus gemacht.
+            Falls ja wird die LED an pin <span class="codeSymbol">7</span> für drei Sekunden an und dann wieder aus gemacht.<br>
+
+            <br>
+
+            Baue die Schaltung nach und ändere den Code ab, so dass die LED zweimal aufblinkt beim drücken.<br>
+
+            <br>
+            <i>Schwere</i> Aufgabe:<br>
+            Erweitere die Schaltung um noch einen Knopf.<br>
+            Lass eine andere Lichtfolge abspielen, wenn der andere Knopf gedrückt wird.
         </div>
     </div>
 

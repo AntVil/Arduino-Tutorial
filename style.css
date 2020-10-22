@@ -20,13 +20,13 @@ a:hover{
 
 @keyframes linkHoverAnimation{
     0%{
-        font-size: 100%;
+        color: rgb(255, 145, 0);
     }
     50%{
-        font-size: 90%;
+        color: rgb(0, 238, 255);
     }
     100%{
-        font-size: 100%;
+        color: rgb(255, 145, 0);
     }
 }
 
@@ -105,4 +105,74 @@ table{
 
 td{
     width: 25%;
+}
+
+
+#two_LED_animation{
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#two_LED_animation_LED1{
+    width: 5%;
+    margin: 5px;
+    background-color: #FF0000;
+    border-radius: 50%;
+
+    animation-duration: 4s;
+    animation-name: two_LED_animation_LED1;
+    animation-iteration-count: infinite;
+}
+
+#two_LED_animation_LED2{
+    width: 5%;
+    margin: 5px;
+    background-color: #FF0000;
+    border-radius: 50%;
+
+    animation-duration: 4s;
+    animation-name: two_LED_animation_LED2;
+    animation-iteration-count: infinite;
+}
+
+@keyframes two_LED_animation_LED1{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes two_LED_animation_LED2{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
