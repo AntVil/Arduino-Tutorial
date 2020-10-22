@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #00eeff;
+}
+
+a{
+    color: #00eeff;
+    padding: auto;
+}
+
+a:hover{
+    animation-duration: 1s;
+    animation-name: linkHoverAnimation;
+    animation-iteration-count: infinite;
+}
+
+@keyframes linkHoverAnimation{
+    0%{
+        font-size: 100%;
+    }
+    50%{
+        font-size: 90%;
+    }
+    100%{
+        font-size: 100%;
+    }
+}
+
+img{
+    width: 100%;
+    border-radius: 5px;
+}
+
+#background {
+    z-index: -1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(10,0,126);
+    background: linear-gradient(326deg, rgb(6, 0, 126) 0%, rgb(3, 52, 124) 37%, rgb(0, 187, 255) 100%);
+}
+
+.container {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #00eeff;
+}
+
+.code{
+    display: inline-block;
+    padding: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-align: left;
+    font-family: monospace;
+    font-size: 14px;
+    color: #00eeff;
+
+    -webkit-user-select: text;
+    -moz-user-select: -moz-text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.code:hover{
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.codeKeyword{
+    color: #ff9900;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.codeName{
+    color: #ffe100;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.codeSymbol{
+    color: #00c3ff;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.description{
+    display: inline-block;
+    text-align: left;
+}
+
+table{
+    margin: auto;
+}
+
+td{
+    width: 25%;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>Arduino Tutorial</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="background"></div>
+
+    <div class="container">
+        <h1>Arduino Tutorial</h1>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h3>Inhalt</h3>
+        <a href="#Genereller_Aufbau"><h4>Genereller Aufbau</h4></a>
+        <a href="#Eine_LED_ansteuern"><h4>Eine LED ansteuern</h4></a>
+        <a href="#Zwei_LED_ansteuern"><h4>Zwei LED's ansteuern</h4></a>
+        <a href="#Knopf_Eingabe"><h4>Knopf Eingabe</h4></a>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h3 id="Genereller_Aufbau" class="sectionTitle">Genereller Aufbau</h3>
+
+        <img style="width: 25%" src="pictures/arduino.png" />
+
+        <br>
+        <br>
+
+        <div class="description">
+            Ein Arduino besitzt viele Pins welche bestimmt Eigenschaften haben.<br>
+            <ul>
+                <li>Der pin GND steht für Ground und ist wie der Minuspol</li>
+                <li>Die pins 3.5V und 5V sind wie Pluspole</li>
+                <li>Die pins 0 bis 13 (im Bild oben) sind Digitale pins</li>
+                <ul>
+                    <li>Bei diesen pins kann die Stromspannung an und ausgeschalten werden</li>
+                    <li>Diese pins können auch auslesen ob eine Stromspannung anliegt</li>
+                </ul>
+                <li>Die pins 0 bis 5 (im Bild unten) sind Analoge pins</li>
+                <ul>
+                    <li>Bei diesen pins kann die Stromspannung zu einem beliebigen Wert gesetzt werden</li>
+                    <li>Diese pins können auch auslesen wie groß eine Stromspannung ist die anliegt</li>
+                </ul>
+            </ul>
+            
+
+        </div>
+
+        <br>
+        <br>
+
+        <div class="code">
+            <span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span><br>
+                <br>
+            <span class="codeSymbol">}</span><br>
+            <br>
+            <span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span><br>
+                <br>
+            <span class="codeSymbol">}</span>
+        </div>
+
+        <br>
+        <br>
+        
+        <div class="description">
+            Ein Arduino Programm besteht immer aus mindestens diesem Code.<br>
+            Jedes Programm beginnt zwischen den geschwungenen Klammern nach <span class="codeName">setup</span>.<br>
+            Dieser Code wird einmal beim start des Programms ausgefürt.<br>
+            Der Code zwischen den geschwungenen Klammern nach <span class="codeName">loop</span> wird immer wieder ausgeführt.
+
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h3 id="Eine_LED_ansteuern" class="sectionTitle">Eine LED ansteuern</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/eine_LED_ansteuern.png" />
+                    </td>
+                    <td>
+                        <div class="code">
+                            <span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span><br>
+                            <span class="codeSymbol">}</span><br>
+                            <br>
+                            <span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">HIGH</span>);</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">LOW</span><span class="codeSymbol"></span>);</span><br>
+                            <span class="codeSymbol">}</span>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel wird eine LED jede Sekunde an und aus gemacht.<br>
+            Dazu wird in <span class="codeName">setup</span> mit <span class="codeKeyword">pinMode</span> dem Arduino gesagt, dass der pin <span class="codeSymbol">7</span> ein <span class="codeKeyword">OUTPUT</span> ist.<br>
+            Dadurch können wir ab jetzt den Strom an pin <span class="codeSymbol">7</span> mit <span class="codeKeyword">digitalWrite</span> an (<span class="codeKeyword">HIGH</span>) und ausschalten (<span class="codeKeyword">LOW</span>).<br>
+            Mit <span class="codeKeyword">delay</span> können wir dem Arduino sagen, dass er eine bestimmte Anzahl an Milisekunden warten soll.<br><br>
+
+            Baue die Schaltung nach und ändere die <span class="codeKeyword">delay</span>'s im Code und schau was passiert.
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="container">
+        <h3 id="Zwei_LED_ansteuern" class="sectionTitle">Zwei LED's ansteuern</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/zwei_LED_ansteuern.png" />
+                    </td>
+                    <td>
+                        <div class="code">
+                            <span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">pinMode</span><span class="codeSymbol">(6, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span><br>
+                            <span class="codeSymbol">}</span><br>
+                            <br>
+                            <span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(6,</span> <span class="codeKeyword">HIGH</span>);</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">LOW</span><span class="codeSymbol"></span>);</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(6,</span> <span class="codeKeyword">LOW</span><span class="codeSymbol"></span>);</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">HIGH</span>);</span><br>
+                            <span class="codeSymbol">}</span>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel werden zwei LED's abwechselnd jede Sekunde an und aus gemacht.<br>
+            Dazu wurde das Beispiel von davor leicht abgeändert.<br>
+            Hier wird einfach ein weiterer pin (<span class="codeSymbol">6</span>) zu einem <span class="codeKeyword">OUTPUT</span> gemacht.<br>
+            Jetzt können wir die beiden LED's abwechselnd mit <span class="codeKeyword">digitalWrite</span> an und ausmachen.
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h3 id="Knopf_Eingabe" class="sectionTitle">Knopf Eingabe</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/knopf_eingabe.png" />
+                    </td>
+                    <td>
+                        <div class="code">
+                            <span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">pinMode</span><span class="codeSymbol">(8, </span><span class="codeKeyword">INPUT</span><span class="codeSymbol">);</span><br>
+                            <span class="codeSymbol">}</span><br>
+                            <br>
+                            <span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span><br>
+                                &emsp;&emsp;<span class="codeKeyword">if</span><span class="codeSymbol">(</span><span class="codeKeyword">digitalRead</span><span class="codeSymbol">(8) == </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">){</span><br>
+                                &emsp;&emsp;&emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">HIGH</span>);</span><br>
+                                &emsp;&emsp;&emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span><br>
+                                &emsp;&emsp;&emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">LOW</span><span class="codeSymbol"></span>);</span><br>
+                                &emsp;&emsp;<span class="codeSymbol">}</span><br>
+                            <span class="codeSymbol">}</span>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel leuchtet eine LED eine Sekunde lang, wenn man den Knopf drückt.<br>
+            Dazu wird in <span class="codeKeyword">setup</span> dem Arduino gesagt, dass pin <span class="codeSymbol">8</span> ein <span class="codeKeyword">INPUT</span> ist<br>
+            Jetzt können wir prüfen mit <span class="codeKeyword">digitalRead</span> auslesen, was für eine Stromspannung an diesem pin ist.<br>
+            Mit <span class="codeKeyword">if</span> können wir prüfen ob etwas bestimmtes zutrifft und jenachdem bestimmten Code ausführen.<br>
+            In diesem Beispiel wir die Stromspannung an dem pin ausgelesen und mit <span class="codeSymbol">==</span> geprüft ob diese gleich <span class="codeKeyword">HIGH</span> ist.<br>
+            Falls ja wird die LED an pin <span class="codeSymbol">7</span> für eine Sekunde an und dann wieder aus gemacht.
+        </div>
+    </div>
+
+    <br>
+</body>
+
+</html>
