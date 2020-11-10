@@ -23,7 +23,12 @@
         <a href="#Genereller_Aufbau"><h4>Genereller Aufbau</h4></a>
         <a href="#Eine_LED_ansteuern"><h4>Eine LED ansteuern</h4></a>
         <a href="#Zwei_LED_ansteuern"><h4>Zwei LED's ansteuern</h4></a>
+        <a href="#Buzzer_ansteuern"><h4>Buzzer ansteuern</h4></a>
         <a href="#Knopf_Eingabe"><h4>Knopf Eingabe</h4></a>
+        <a href="#Analoger_Ausgang"><h4>Analoger Ausgang</h4></a>
+        <a href="#Variablen"><h4>Variablen</h4></a>
+        <a href="#Potentiometer_Eingabe"><h4>Potentiometer Eingabe</h4></a>
+        <a href="#Abstandsmesser"><h4>Abstandsmesser</h4></a>
     </div>
 
     <br>
@@ -37,19 +42,19 @@
         <br>
 
         <div class="description">
-            Ein Arduino besitzt viele Pins welche bestimmt Eigenschaften haben.<br>
+            Ein Arduino besitzt viele Pins welche bestimmt Eigenschaften haben. <br>
+            Hier ein kurzer Überblick:<br>
             <ul>
                 <li>Der pin GND steht für Ground und ist wie der Minuspol</li>
                 <li>Die pins 3.5V und 5V sind wie Pluspole</li>
-                <li>Die pins 0 bis 13 (im Bild oben) sind Digitale pins</li>
+                <li>Die pins 0 bis 13 (im Bild oben) sind Digitale Pins</li>
                 <ul>
                     <li>Bei diesen pins kann die Stromspannung an und ausgeschalten werden</li>
                     <li>Diese pins können auch auslesen ob eine Stromspannung anliegt</li>
                 </ul>
-                <li>Die pins 0 bis 5 (im Bild unten) sind Analoge pins</li>
+                <li>Die pins A0 bis A5 (im Bild unten) sind Analoge Pins</li>
                 <ul>
-                    <li>Bei diesen pins kann die Stromspannung zu einem beliebigen Wert gesetzt werden</li>
-                    <li>Diese pins können auch auslesen wie groß eine Stromspannung ist die anliegt</li>
+                    <li>Diese pins können auslesen wie groß eine Stromspannung ist die anliegt</li>
                 </ul>
             </ul>
             
@@ -60,13 +65,13 @@
         <br>
 
         <div class="code">
-            <span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span><br>
-                <br>
-            <span class="codeSymbol">}</span><br>
-            <br>
-            <span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span><br>
-                <br>
-            <span class="codeSymbol">}</span>
+            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+            <pre class="codeLine">  </pre>
+            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+            <pre class="codeLine"> </pre>
+            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+            <pre class="codeLine">  </pre>
+            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
         </div>
 
         <br>
@@ -95,16 +100,16 @@
                     </td>
                     <td>
                         <div class="code">
-                            <span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span><br>
-                            <span class="codeSymbol">}</span><br>
-                            <br>
-                            <span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">HIGH</span>);</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">LOW</span><span class="codeSymbol"></span>);</span><br>
-                            <span class="codeSymbol">}</span>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7, </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7, </span><span class="codeKeyword">LOW</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
                         </div>
                     </td>
                     <td></td>
@@ -139,19 +144,20 @@
                     </td>
                     <td>
                         <div class="code">
-                            <span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">pinMode</span><span class="codeSymbol">(6, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span><br>
-                            <span class="codeSymbol">}</span><br>
-                            <br>
-                            <span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(6,</span> <span class="codeKeyword">HIGH</span>);</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">LOW</span><span class="codeSymbol"></span>);</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(6,</span> <span class="codeKeyword">LOW</span><span class="codeSymbol"></span>);</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">HIGH</span>);</span><br>
-                            <span class="codeSymbol">}</span>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(6, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(6, </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7, </span><span class="codeKeyword">LOW</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(6, </span><span class="codeKeyword">LOW</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7, </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
                         </div>
                     </td>
                     <td></td>
@@ -170,7 +176,7 @@
 
             <br>
 
-            Baue die Schaltung nach und ändere den Code ab, so dass diese Lichtfolge entsteht:
+            Baue die Schaltung nach und ändere den Code ab, sodass diese Lichtfolge entsteht:
 
             <br>
 
@@ -178,6 +184,50 @@
                 <span id="two_LED_animation_LED1">&emsp;</span>
                 <span id="two_LED_animation_LED2">&emsp;</span>
             </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h3 id="Buzzer_ansteuern" class="sectionTitle">Buzzer ansteuern</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/buzzer.png" />
+                    </td>
+                    <td>
+                        <div class="code">
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">tone</span><span class="codeSymbol">(7, 880);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">noTone</span><span class="codeSymbol">(7);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  </pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel wird mit einem passiven Buzzer der Ton A<sub>5</sub> für eine Sekunde gespielt.<br>
+            
+            <br>
+
+            Baue die Schaltung nach und ändere den Code ab, sodass eine Melodie abgespielt wird.<br>
+            Dafür braucht man eine <i><a href="https://pages.mtu.edu/~suits/notefreqs.html">Liste von Frequenzen</a></i>
         </div>
     </div>
 
@@ -196,18 +246,18 @@
                     </td>
                     <td>
                         <div class="code">
-                            <span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">pinMode</span><span class="codeSymbol">(8, </span><span class="codeKeyword">INPUT</span><span class="codeSymbol">);</span><br>
-                            <span class="codeSymbol">}</span><br>
-                            <br>
-                            <span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span><br>
-                                &emsp;&emsp;<span class="codeKeyword">if</span><span class="codeSymbol">(</span><span class="codeKeyword">digitalRead</span><span class="codeSymbol">(8) == </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">){</span><br>
-                                &emsp;&emsp;&emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">HIGH</span>);</span><br>
-                                &emsp;&emsp;&emsp;&emsp;<span class="codeKeyword">delay</span><span class="codeSymbol">(3000);</span><br>
-                                &emsp;&emsp;&emsp;&emsp;<span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7,</span> <span class="codeKeyword">LOW</span><span class="codeSymbol"></span>);</span><br>
-                                &emsp;&emsp;<span class="codeSymbol">}</span><br>
-                            <span class="codeSymbol">}</span>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(8, </span><span class="codeKeyword">INPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">if</span><span class="codeSymbol">(</span><span class="codeKeyword">digitalRead</span><span class="codeSymbol">(8) == </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">){</span></pre>
+                            <pre class="codeLine">    <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7, </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">    <span class="codeKeyword">delay</span><span class="codeSymbol">(3000);</span></pre>
+                            <pre class="codeLine">    <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7, </span><span class="codeKeyword">LOW</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
                         </div>
                     </td>
                     <td></td>
@@ -234,6 +284,223 @@
             <i>Schwere</i> Aufgabe:<br>
             Erweitere die Schaltung um noch einen Knopf.<br>
             Lass eine andere Lichtfolge abspielen, wenn der andere Knopf gedrückt wird.
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h3 id="Analoger_Ausgang" class="sectionTitle">Analoger Ausgang</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/analoger_ausgang.png" />
+                        <i>(pins die</i> <span class="codeKeyword">analogWrite</span> <i> benutzen können sind mit ~ markiert)</i>
+                    </td>
+                    <td>
+                        <div class="code">
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(5, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">analogWrite</span><span class="codeSymbol">(5, </span><span class="codeSymbol">255);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">analogWrite</span><span class="codeSymbol">(5, </span><span class="codeSymbol">125);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">analogWrite</span><span class="codeSymbol">(5, </span><span class="codeSymbol">0);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(1000);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel wird eine LED verschieden stark zum Leuchten gebracht.<br>
+            Es wird dafür <span class="codeKeyword">analogWrite</span> benutzt.<br>
+            Anders als <span class="codeKeyword">digitalWrite</span> kann <span class="codeKeyword">analogWrite</span> Werte zwischen 0 und 255 annehmen.<br>
+
+            <br>
+
+            Baue die Schaltung nach und ändere einige Werte im Code und schau was passiert.<br>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h3 id="#Variablen" class="sectionTitle">Variablen</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/analoger_ausgang.png" />
+                    </td>
+                    <td>
+                        <div class="code">
+                            <pre class="codeLine"><span class="codeKeyword">int</span> <span class="codeName">helligkeit</span><span class="codeSymbol">;</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(5, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeName">helligkeit</span><span class="codeSymbol"> = 0;</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">analogWrite</span><span class="codeSymbol">(5, </span><span class="codeName">helligkeit</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(100);</span></pre>
+                            <pre class="codeLine">  <span class="codeName">helligkeit</span><span class="codeSymbol"> += 1;</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">if</span><span class="codeSymbol">(</span><span class="codeName">helligkeit</span><span class="codeSymbol"> == 255){</span></pre>
+                            <pre class="codeLine">    <span class="codeName">helligkeit</span><span class="codeSymbol"> = 0;</span></pre>
+                            <pre class="codeLine">  <span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel wird eine LED langsam heller und heller gestellt.<br>
+            Sobald die LED komplett scheint wird die Helligkeit wieder zurückgesetzt.<br>
+            Hierzu wird eine Variable verwendet.<br>
+            Die Variable wird hier verwendet um die Helligkeit immer wieder zu einem anderen Wert zu setzen.<br>
+            Mit <span class="codeName">helligkeit</span><span class="codeSymbol"> = 0;</span> wird der Wert der Variablen zu <span class="codeSymbol">0</span> gesetzt.<br>
+            Mit <span class="codeName">helligkeit</span><span class="codeSymbol"> += 1;</span> wird <span class="codeSymbol">1</span> zu der Variablen dazu gezählt.<br>
+            Die Variable setzen wir auf <span class="codeSymbol">0</span>,wenn sie den Wert <span class="codeSymbol">255</span> erreicht, <br>
+            da die LED nachdem sie komplett leuchtet wieder neu anfangen soll.
+
+            <br>
+
+            Baue die Schaltung nach und ändere den Code ab, <br>
+            sodass die LED immer dunkler wird und dann wieder aufleuchtet (Gegenteil).<br>
+
+            <br>
+            <i>Schwere</i> Aufgabe:<br>
+            Erweitere die Schaltung um noch eine Variable.<br>
+            Lass die LED langsam aufleuchten und wieder langsam dunkel werden.<br>
+            <i>Tipp: </i><br>
+            Die zweite Variable sollte verwendet werden um die erste Variable zu ändern.<br>
+            Wenn das maximum oder minimum erreicht wird sollte die Helligkeit nicht zurückgesetzt werden, <br>sonder die zweite Variable verwendet werden.
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h3 id="Potentiometer_Eingabe" class="sectionTitle">Potentiometer Eingabe</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/potentiometer.png" />
+                    </td>
+                    <td>
+                        <div class="code">
+                            <pre class="codeLine"><span class="codeKeyword">int</span> <span class="codeName">helligkeit</span><span class="codeSymbol">;</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeName">helligkeit</span><span class="codeSymbol"> = </span><span class="codeKeyword">analogRead</span><span class="codeSymbol">(A5);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">analogWrite</span><span class="codeSymbol">(7, </span><span class="codeName">helligkeit</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel wird ein Potentiometer verwendet um eine LED heller und dunkler zu stellen.<br>
+            Dazu wird der Ausgang vom Potentiometer mit einen analogen Pin verbunden.<br>
+            Mit <span class="codeKeyword">analogRead</span> wird der Wert ausgelesen.<br>
+            Dieser Wert wird gespeichert und mit <span class="codeKeyword">analogWrite</span> wird dann die helligkeit der LED gesetzt.<br>
+
+            <br>
+
+            Baue die Schaltung nach und teste diese.<br>
+            Erweitere die Schaltung danach um eine zweite LED die heller wird wenn die erste dunkler wird und umgekehrt.<br>
+            <i>Tipp:</i><br>
+            Der Wert von <span class="codeName">helligkeit</span> liegt zwischen <span class="codeSymbol">0</span> und <span class="codeSymbol">255</span>.<br>
+            Mit <span class="codeSymbol">255 - </span><span class="codeName">helligkeit</span> erhält man den Wert zu dem die andere LED gesetzt werden muss.
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h3 id="Abstandsmesser" class="sectionTitle">Abstandsmesser</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/abstandsmesser.png" />
+                    </td>
+                    <td>
+                        <div class="code">
+                            <pre class="codeLine"><span class="codeKeyword">int</span> <span class="codeName">cmAbstand</span><span class="codeSymbol">;</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(5, </span><span class="codeKeyword">INPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(6, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(6, </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delayMicroseconds</span><span class="codeSymbol">(1000);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(6, </span><span class="codeKeyword">LOW</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeName">cmAbstand</span><span class="codeSymbol"> = </span><span class="codeKeyword">pulseIn</span><span class="codeSymbol">(5, </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">) / 58.0;</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">if</span><span class="codeSymbol">(</span><span class="codeName">cmAbstand</span><span class="codeSymbol"> &lt; 10){</span></pre>
+                            <pre class="codeLine">    <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7, </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">    <span class="codeKeyword">delay</span><span class="codeSymbol">(100);</span></pre>
+                            <pre class="codeLine">    <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7, </span><span class="codeKeyword">LOW</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel wird der Abstand in <i>cm</i> ausgelesen.<br>
+            Wenn dieser Abstand weniger als 10<i>cm</i> ist, dann soll die LED kurz aufflackern.<br>
+            (Der Abstand kann nicht immer korrekt ausgelesen werden, wenn dieser zum Beispiel zu groß ist)<br>
+
+            <br>
+
+            Baue die Schaltung nach und teste wie gut der Sensor den Abstand messen kann.<br>
+            Füge weitere LED's hinzu welche ab einem bestimmten abstand anfangen zu leuchten.
         </div>
     </div>
 

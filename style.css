@@ -76,6 +76,15 @@ img{
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+.codeLine{
+    margin: 0;
+    padding: 0;
+}
+
+.codeBlock{
+    margin-left: 20px;
+}
+
 .codeKeyword{
     color: #ff9900;
     font-family: monospace;
