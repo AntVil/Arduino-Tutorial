@@ -28,6 +28,7 @@
         <a href="#Analoger_Ausgang"><h4>Analoger Ausgang</h4></a>
         <a href="#Variablen"><h4>Variablen</h4></a>
         <a href="#Potentiometer_Eingabe"><h4>Potentiometer Eingabe</h4></a>
+        <a href="#Neigungsschalter"><h4>Neigungsschalter</h4></a>
         <a href="#Abstandsmesser"><h4>Abstandsmesser</h4></a>
     </div>
 
@@ -278,6 +279,15 @@
 
             <br>
 
+            Wenn der Knopf aktiv ist, liegt <span class="codeKeyword">HIGH</span> am pin.<br>
+            Wenn der Knopf nicht aktiv ist, liegt <span class="codeKeyword">LOW</span> am pin.<br>
+            Es ist wichtig, dass <span class="codeKeyword">LOW</span> anliegt, da der Arduino nicht mit Zwischenwerten klar kommt.<br>
+            Um dieses Verhalten zu ermöglichen muss sowohl <span class="codeKeyword">HIGH</span> als auch <span class="codeKeyword">LOW</span> mit dem pin verbunden sein.<br>
+            Damit es nicht zu einem Kurzschluss kommt muss man einen großen Widerstand zwischen die beiden Pole machem.<br>
+
+
+            <br>
+
             Baue die Schaltung nach und ändere den Code ab, so dass die LED zweimal aufblinkt beim drücken.<br>
 
             <br>
@@ -446,6 +456,58 @@
             <i>Tipp:</i><br>
             Der Wert von <span class="codeName">helligkeit</span> liegt zwischen <span class="codeSymbol">0</span> und <span class="codeSymbol">255</span>.<br>
             Mit <span class="codeSymbol">255 - </span><span class="codeName">helligkeit</span> erhält man den Wert zu dem die andere LED gesetzt werden muss.
+        </div>
+    </div>
+
+    <br>
+
+    <div id="Neigungsschalter" class="container">
+        <h3 class="sectionTitle">Neigungsschalter</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/tiltswitch.png" />
+                        <i>(Widerstand: 10 kΩ, 220Ω)</i>
+                    </td>
+                    <td>
+                        <div class="code">
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(6, </span><span class="codeKeyword">INPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">pinMode</span><span class="codeSymbol">(7, </span><span class="codeKeyword">OUTPUT</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">if</span><span class="codeSymbol">(</span><span class="codeKeyword">digitalRead</span><span class="codeSymbol">(6) == </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">){</span></pre>
+                            <pre class="codeLine">    <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7, </span><span class="codeKeyword">HIGH</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">    <span class="codeKeyword">delay</span><span class="codeSymbol">(3000);</span></pre>
+                            <pre class="codeLine">    <span class="codeKeyword">digitalWrite</span><span class="codeSymbol">(7, </span><span class="codeKeyword">LOW</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel wird ein Neigungsschalter verwendet um eine LED zum leuchten zu bringen.<br>
+            Wenn der Neigungsschalter aktiv ist, liegt <span class="codeKeyword">HIGH</span> am pin.<br>
+            Wenn der Neigungsschalter nicht aktiv ist, liegt <span class="codeKeyword">LOW</span> am pin.<br>
+            Es ist wichtig, dass <span class="codeKeyword">LOW</span> anliegt, da der Arduino nicht mit Zwischenwerten klar kommt.<br>
+            Um dieses Verhalten zu ermöglichen muss sowohl <span class="codeKeyword">HIGH</span> als auch <span class="codeKeyword">LOW</span> mit dem pin verbunden sein.<br>
+            Damit es nicht zu einem Kurzschluss kommt muss man einen großen Widerstand zwischen die beiden Pole machem.<br>
+
+            <br>
+
+            Baue die Schaltung nach und lass eine andere Lichtfolge aufblinken.<br>
+            Vergleiche die Schaltung mit der eines Knopfs.
         </div>
     </div>
 
