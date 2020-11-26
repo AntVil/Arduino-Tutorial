@@ -105,6 +105,12 @@ img{
     font-size: 14px;
 }
 
+.codeString{
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 14px;
+}
+
 .description{
     display: inline-block;
     text-align: left;

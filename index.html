@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width" />
     <title>Arduino Tutorial</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="pictures/arduino.png" rel="icon" type="image/gif">
     <script src="script.js"></script>
 </head>
 
@@ -19,15 +20,29 @@
     <br>
 
     <div class="container">
+        <h3>Vormerkung</h3>
+        Dieses Dokument erhebt kein Recht auf Vollständigkeit oder Korrektheit.<br>
+        An einigen Stellen mag es inkonsistent sein<br>
+        <b>Trotzdem viel Spaß mit Arduino!</b>
+    </div>
+
+    <br>
+
+    <div class="container">
         <h3>Inhalt</h3>
         <a href="#Genereller_Aufbau"><h4>Genereller Aufbau</h4></a>
         <a href="#Eine_LED_ansteuern"><h4>Eine LED ansteuern</h4></a>
         <a href="#Zwei_LED_ansteuern"><h4>Zwei LED's ansteuern</h4></a>
         <a href="#Buzzer_ansteuern"><h4>Buzzer ansteuern</h4></a>
         <a href="#Knopf_Eingabe"><h4>Knopf Eingabe</h4></a>
+        <a href="#Mehr_zu_if"><h4>Mehr zu if</h4></a>
+        <a href="#while_Schleife"><h4>while-Schleife</h4></a>
         <a href="#Analoger_Ausgang"><h4>Analoger Ausgang</h4></a>
         <a href="#Variablen"><h4>Variablen</h4></a>
         <a href="#Potentiometer_Eingabe"><h4>Potentiometer Eingabe</h4></a>
+        <a href="#Serieller_Monitor"><h4>Serieller Monitor</h4></a>
+        <a href="#Variablen_Ausgabe"><h4>Variablen Ausgabe</h4></a>
+        <a href="#LDR(Light-Dependant-Resistor)"><h4>LDR(Light-Dependant-Resistor)</h4></a>
         <a href="#Neigungsschalter"><h4>Neigungsschalter</h4></a>
         <a href="#Abstandsmesser"><h4>Abstandsmesser</h4></a>
     </div>
@@ -299,6 +314,57 @@
 
     <br>
 
+    <div id="Mehr_zu_if" class="container">
+        <h3 class="sectionTitle">Mehr zu if</h3>
+
+        
+        <div class="code">
+            <pre class="codeLine"><span class="codeKeyword">if</span><span class="codeSymbol">(...){</span></pre>
+            <pre class="codeLine">  <span class="codeSymbol">...</span></pre>
+            <pre class="codeLine"><span class="codeSymbol">}</span><span class="codeKeyword">else</span>{</span></pre>
+            <pre class="codeLine">  <span class="codeSymbol">...</span></pre>
+            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+        </div>
+
+        <br>
+        <br>
+        
+        <div class="description">
+            Mit <span class="codeKeyword">if</span> wird eine Abzweigung im Programm erstellt.<br>
+            Wenn die Bedingung zutrifft (wahr ist), dann wird der Code zwischen den geschwungenen Klammern ausgeführt.<br>
+            Falls die Bedingung nicht zutrifft wird dieser Code übersprungen.<br>
+            Mit einem <span class="codeKeyword">else</span> kann man nach einem <span class="codeKeyword">if</span> einen weiteren Codeblock schreiben.<br>
+            Dieser wird nur dann ausgeführt, wenn die Bedingung nicht stimmt sonst wird dieser Code übersprungen.
+        </div>
+    </div>
+
+    <br>
+
+    <div id="while-Schleife" class="container">
+        <h3 class="sectionTitle">while-Schleife</h3>
+
+        
+        <div class="code">
+            <pre class="codeLine"><span class="codeKeyword">while</span><span class="codeSymbol">(...){</span></pre>
+            <pre class="codeLine">  <span class="codeSymbol">...</span></pre>
+            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+        </div>
+
+        <br>
+        <br>
+        
+        <div class="description">
+            Mit <span class="codeKeyword">while</span> wird eine Schleife im Programm erstellt.<br>
+            Solange die Bedingung zutrifft (wahr ist) wird der Code zwischen den geschwungenen Klammern ausgeführt.<br>
+            Falls die Bedingung nicht zutrifft wird dieser Code übersprungen.<br>
+            Bei <span class="codeKeyword">while</span> gibt es kein <span class="codeKeyword">else</span>.<br>
+            Eine <span class="codeKeyword">while</span>-Schleife kann dazu führen, dass Endlos-Schleifen entstehen, weil die Bedingung nie Falsch wird.<br>
+            Eine Endlos-Schleife, führt dazu, dass nur der Code des <span class="codeKeyword">while</span> ausgeführt wird und sonst keiner.<br>
+        </div>
+    </div>
+
+    <br>
+
     <div id="Analoger_Ausgang" class="container">
         <h3 class="sectionTitle">Analoger Ausgang</h3>
 
@@ -369,7 +435,7 @@
                             <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
                             <pre class="codeLine">  <span class="codeKeyword">analogWrite</span><span class="codeSymbol">(5, </span><span class="codeName">helligkeit</span><span class="codeSymbol">);</span></pre>
                             <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(100);</span></pre>
-                            <pre class="codeLine">  <span class="codeName">helligkeit</span><span class="codeSymbol"> += 1;</span></pre>
+                            <pre class="codeLine">  <span class="codeName">helligkeit</span><span class="codeSymbol"> = </span><span class="codeName">helligkeit</span><span class="codeSymbol"> + 1;</span></pre>
                             <pre class="codeLine">  <span class="codeKeyword">if</span><span class="codeSymbol">(</span><span class="codeName">helligkeit</span><span class="codeSymbol"> == 255){</span></pre>
                             <pre class="codeLine">    <span class="codeName">helligkeit</span><span class="codeSymbol"> = 0;</span></pre>
                             <pre class="codeLine">  <span class="codeSymbol">}</span></pre>
@@ -390,7 +456,8 @@
             Hierzu wird eine Variable verwendet.<br>
             Die Variable wird hier verwendet um die Helligkeit immer wieder zu einem anderen Wert zu setzen.<br>
             Mit <span class="codeName">helligkeit</span><span class="codeSymbol"> = 0;</span> wird der Wert der Variablen zu <span class="codeSymbol">0</span> gesetzt.<br>
-            Mit <span class="codeName">helligkeit</span><span class="codeSymbol"> += 1;</span> wird <span class="codeSymbol">1</span> zu der Variablen dazu gezählt.<br>
+            Mit <span class="codeName">helligkeit</span><span class="codeSymbol"> = </span><span class="codeName">helligkeit</span><span class="codeSymbol"> + 1;</span> wird <span class="codeName">helligkeit</span> auf den Wert von <span class="codeName">helligkeit</span><span id="codeSymbol">+ 1</span> gesetzt.<br>
+            Oder kurz gesagt es wird <span class="codeSymbol">1</span> dazu gerechnet.<br>
             Die Variable setzen wir auf <span class="codeSymbol">0</span>,wenn sie den Wert <span class="codeSymbol">255</span> erreicht, <br>
             da die LED nachdem sie komplett leuchtet wieder neu anfangen soll.
 
@@ -401,7 +468,7 @@
 
             <br>
             <i>Schwere</i> Aufgabe:<br>
-            Erweitere die Schaltung um noch eine Variable.<br>
+            Erweitere das Program um noch eine Variable.<br>
             Lass die LED langsam aufleuchten und wieder langsam dunkel werden.<br>
             <i>Tipp: </i><br>
             Die zweite Variable sollte verwendet werden um die erste Variable zu ändern.<br>
@@ -456,6 +523,145 @@
             <i>Tipp:</i><br>
             Der Wert von <span class="codeName">helligkeit</span> liegt zwischen <span class="codeSymbol">0</span> und <span class="codeSymbol">255</span>.<br>
             Mit <span class="codeSymbol">255 - </span><span class="codeName">helligkeit</span> erhält man den Wert zu dem die andere LED gesetzt werden muss.
+        </div>
+    </div>
+
+    <br>
+
+    <div id="Serieller_Monitor" class="container">
+        <h3 class="sectionTitle">Serieller Monitor</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/arduino.png" />
+                    </td>
+                    <td>
+                        <div class="code">
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">Serial</span><span class="codeSymbol">.</span><span class="codeKeyword">begin</span><span class="codeSymbol">(9600);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">Serial</span><span class="codeSymbol">.</span><span class="codeKeyword">println</span><span class="codeSymbol">(</span><span class="codeString">"Hello World!"</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">Serial</span><span class="codeSymbol">.</span><span class="codeKeyword">println</span><span class="codeSymbol">(</span><span class="codeString">"Die Zahl 42:"</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">Serial</span><span class="codeSymbol">.</span><span class="codeKeyword">println</span><span class="codeSymbol">(42);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  </pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel wird mit <span class="codeKeyword">Serial</span><span class="codeSymbol">.</span><span class="codeKeyword">begin</span><span class="codeSymbol">(9600);</span> eine Verbindung zum Computer hergestellt.<br>
+            Sobald die Verbindung hergestellt wurde, kann man mit <span class="codeKeyword">Serial</span><span class="codeSymbol">.</span><span class="codeKeyword">println</span> Text, Zhalen oder Variablen ausgeben.<br>
+            Mit dem Monitor hat man also zugriff auf die sonst unbekannten Variablen des Arduino.
+
+            <br>
+
+            Ändere den Code ab und schau was passiert.<br>
+            Was passiert, wenn man <span class="codeKeyword">Serial</span><span class="codeSymbol">.</span><span class="codeKeyword">println</span> in <span class="codeName">loop</span> verwendet?
+        </div>
+    </div>
+
+    <br>
+
+    <div id="Variablen_Ausgabe" class="container">
+        <h3 class="sectionTitle">Variablen Ausgabe</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/potentiometer_Serial.png" />
+                    </td>
+                    <td>
+                        <div class="code">
+                            <pre class="codeLine"><span class="codeKeyword">int</span> <span class="codeName">drehung</span><span class="codeSymbol">;</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">Serial</span><span class="codeSymbol">.</span><span class="codeKeyword">begin</span><span class="codeSymbol">(9600);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeName">drehung</span><span class="codeSymbol"> = </span><span class="codeKeyword">analogRead</span><span class="codeSymbol">(A5);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">Serial</span><span class="codeSymbol">.</span><span class="codeKeyword">println</span><span class="codeSymbol">(</span><span class="codeName">drehung</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(100);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel wird der Serielle Monitor verwendet, um die Drehung eines Potentiometers auszugeben.<br>
+
+            <br>
+
+            Baue die Schaltung nach und teste diese.<br>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="LDR(Light-Dependant-Resistor)" class="container">
+        <h3 class="sectionTitle">LDR (Light-Dependant-Resistor)</h3>
+
+        <table class="example">
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>
+                        <img src="pictures/LDR_Serial.png" />
+                        <i>(Widerstand: 10 kΩ)</i>
+                    </td>
+                    <td>
+                        <div class="code">
+                            <pre class="codeLine"><span class="codeKeyword">int</span> <span class="codeName">helligkeit</span><span class="codeSymbol">;</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">setup</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">Serial</span><span class="codeSymbol">.</span><span class="codeKeyword">begin</span><span class="codeSymbol">(9600);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                            <pre class="codeLine"> </pre>
+                            <pre class="codeLine"><span class="codeKeyword">void</span> <span class="codeName">loop</span><span class="codeSymbol">(){</span></pre>
+                            <pre class="codeLine">  <span class="codeName">helligkeit</span><span class="codeSymbol"> = </span><span class="codeKeyword">analogRead</span><span class="codeSymbol">(A5);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">Serial</span><span class="codeSymbol">.</span><span class="codeKeyword">println</span><span class="codeSymbol">(</span><span class="codeName">helligkeit</span><span class="codeSymbol">);</span></pre>
+                            <pre class="codeLine">  <span class="codeKeyword">delay</span><span class="codeSymbol">(100);</span></pre>
+                            <pre class="codeLine"><span class="codeSymbol">}</span></pre>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>        
+
+        <br>
+        <br>
+        
+        <div class="description">
+            In diesem Beispiel wird der Serielle Monitor verwendet, um die Helligkeit, die ein LDR abbekommt, auszugeben.<br>
+
+            <br>
+
+            Baue die Schaltung nach und teste diese.<br>
+            Schreibe den maximal und minimal Wert auf.<br>
+            Erweitere die Schaltung um eine LED, welche leutet, wenn der Wert unter der Hälfte zwischen maximal und minimal Wert liegt.<br>
+            <i>Tipp:</i><br>
+            Verwende ein <span class="codeKeyword">if</span> und <span class="codeSymbol">&lt;</span> (kleiner als).
         </div>
     </div>
 
